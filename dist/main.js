@@ -55,7 +55,7 @@ eval("const View = __webpack_require__(/*! ../src/ttt-view */ \"./src/ttt-view.j
   \*************************/
 /***/ ((module) => {
 
-eval("class View {\n  constructor(game, $el) {}\n\n  bindEvents() {}\n\n  makeMove($square) {}\n\n  setupBoard() {}\n}\n\nmodule.exports = View;\n\n\n//# sourceURL=webpack:///./src/ttt-view.js?");
+eval("class View {\n  constructor(game, $el) {\n    this.game = game;\n    this.$el = el;\n\n    this.setupBoard();\n  }\n\n  bindEvents() {}\n\n  makeMove($square) {}\n\n  setupBoard() {\n    const $ul = $(\"<ul>\");\n\n    for (let rowIdx = 0; rowIdx < 3; rowIdx++) {\n      for (let colIdx = 0; colIdx < 3; colIdx++) {\n        let $li = $(\"<li>\");\n        $li.data(\"pos\", [rowIdx, colIdx]);\n\n        $ul.append($li);\n      }\n    }\n  }\n}\n\nmodule.exports = View;\n\n\n//# sourceURL=webpack:///./src/ttt-view.js?");
 
 /***/ })
 
